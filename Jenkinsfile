@@ -55,13 +55,14 @@ pipeline {
             steps {
                 timestamps {
                     script {
+                        templatebasesList = utils.lineToArray(templatebases.toLowerCase())
 
                         if (templatebasesList.size() == 0) {
                             return
                         }
                         
                         templateDb = templatebasesList[0]
-                        testbaseConnString = Utils.getConnString(server1c, templateDb, agent1cPort)
+                        testbaseConnString = utils .getConnString(server1c, templateDb, agent1cPort)
 
                         platform1cLine = ""
                         if (platform1c != null && !platform1c.isEmpty()) {
