@@ -30,12 +30,7 @@ pipeline {
                 timestamps {
                     script {
                         templatebasesList = utils.lineToArray(templatebases.toLowerCase())
-                        storages1cPathList = utils.lineToArray(storages1cPath.toLowerCase())
-
-                        if (storages1cPathList.size() != 0) {
-                            assert storages1cPathList.size() == templatebasesList.size()
-                        }
-
+                        
                         server1c = server1c.isEmpty() ? "localhost" : server1c
                                                
                         server1cPort = server1cPort.isEmpty() ? "1540" : server1cPort
