@@ -57,7 +57,8 @@ pipeline {
                         }
                         
                         templateDb = templatebasesList[0]
-                        testbaseConnString = utils .getConnString(server1c, templateDb, agent1cPort)
+                        testbase = "${templateDb}"
+                        testbaseConnString = utils.getConnString(server1c, testbase, agent1cPort)
 
                         platform1cLine = ""
                         if (platform1c != null && !platform1c.isEmpty()) {
@@ -77,7 +78,7 @@ pipeline {
                         returnCode = utils.cmd("runner vanessa --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathvanessa tools/add/bddRunner.epf")
 
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${templateDb}, ${testbaseConnString}, ${platform1cLine}")
+                            utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${testbase} : ${testbaseConnString} : ${platform1cLine}")
                         }
                     }
                 }
