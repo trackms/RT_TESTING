@@ -77,7 +77,7 @@ pipeline {
                         returnCode = utils.cmd("runner vanessa --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathvanessa tools/add/bddRunner.epf")
 
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${testbase}")
+                            utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${templateDb}, ${testbaseConnString}, ${platform1cLine}")
                         }
                     }
                 }
