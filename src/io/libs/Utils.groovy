@@ -4,6 +4,10 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import groovy.json.JsonSlurper
 
+def getConnString(server1c, infobase, agent1cPort) {
+    return "/S${server1c}:${agent1cPort}\\${infobase}"
+}
+
 // Выполняет команду в среде ОС Windows (batch) или Linux (bash) и возвращает статус операции
 //
 // Параметры:
