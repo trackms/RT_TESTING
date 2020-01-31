@@ -7,16 +7,16 @@ def utils = new Utils()
 pipeline {
 
     parameters {
-        string(defaultValue: "${env.jenkinsAgent}", description: 'Нода дженкинса, на которой запускать пайплайн. По умолчанию master', name: 'jenkinsAgent')
-        string(defaultValue: "${env.server1c}", description: 'Имя сервера 1с, по умолчанию localhost', name: 'server1c')
-        string(defaultValue: "${env.server1cPort}", description: 'Порт рабочего сервера 1с. По умолчанию 1540. Не путать с портом агента кластера (1541)', name: 'server1cPort')
-        string(defaultValue: "${env.agent1cPort}", description: 'Порт агента кластера 1с. По умолчанию 1541', name: 'agent1cPort')
-        string(defaultValue: "${env.platform1c}", description: 'Версия платформы 1с, например 8.3.12.1685. По умолчанию будет использована последня версия среди установленных', name: 'platform1c')
-        string(defaultValue: "${env.admin1cUser}", description: 'Имя администратора с правом открытия вншних обработок (!) для базы тестирования 1с Должен быть одинаковым для всех баз', name: 'admin1cUser')
-        string(defaultValue: "${env.admin1cPwd}", description: 'Пароль администратора базы тестирования 1C. Должен быть одинаковым для всех баз', name: 'admin1cPwd')
-        string(defaultValue: "${env.templatebases}", description: 'Список баз для тестирования через запятую. Например work_erp,work_upp', name: 'templatebases')
+        string(defaultValue: "${env.jenkinsAgent}", description: '╨Э╨╛╨┤╨░ ╨┤╨╢╨╡╨╜╨║╨╕╨╜╤Б╨░, ╨╜╨░ ╨║╨╛╤В╨╛╤А╨╛╨╣ ╨╖╨░╨┐╤Г╤Б╨║╨░╤В╤М ╨┐╨░╨╣╨┐╨╗╨░╨╣╨╜. ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О master', name: 'jenkinsAgent')
+        string(defaultValue: "${env.server1c}", description: '╨Ш╨╝╤П ╤Б╨╡╤А╨▓╨╡╤А╨░ 1╤Б, ╨┐╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О localhost', name: 'server1c')
+        string(defaultValue: "${env.server1cPort}", description: '╨Я╨╛╤А╤В ╤А╨░╨▒╨╛╤З╨╡╨│╨╛ ╤Б╨╡╤А╨▓╨╡╤А╨░ 1╤Б. ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О 1540. ╨Э╨╡ ╨┐╤Г╤В╨░╤В╤М ╤Б ╨┐╨╛╤А╤В╨╛╨╝ ╨░╨│╨╡╨╜╤В╨░ ╨║╨╗╨░╤Б╤В╨╡╤А╨░ (1541)', name: 'server1cPort')
+        string(defaultValue: "${env.agent1cPort}", description: '╨Я╨╛╤А╤В ╨░╨│╨╡╨╜╤В╨░ ╨║╨╗╨░╤Б╤В╨╡╤А╨░ 1╤Б. ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О 1541', name: 'agent1cPort')
+        string(defaultValue: "${env.platform1c}", description: '╨Т╨╡╤А╤Б╨╕╤П ╨┐╨╗╨░╤В╤Д╨╛╤А╨╝╤Л 1╤Б, ╨╜╨░╨┐╤А╨╕╨╝╨╡╤А 8.3.12.1685. ╨Я╨╛ ╤Г╨╝╨╛╨╗╤З╨░╨╜╨╕╤О ╨▒╤Г╨┤╨╡╤В ╨╕╤Б╨┐╨╛╨╗╤М╨╖╨╛╨▓╨░╨╜╨░ ╨┐╨╛╤Б╨╗╨╡╨┤╨╜╤П ╨▓╨╡╤А╤Б╨╕╤П ╤Б╤А╨╡╨┤╨╕ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╜╤Л╤Е', name: 'platform1c')
+        string(defaultValue: "${env.admin1cUser}", description: '╨Ш╨╝╤П ╨░╨┤╨╝╨╕╨╜╨╕╤Б╤В╤А╨░╤В╨╛╤А╨░ ╤Б ╨┐╤А╨░╨▓╨╛╨╝ ╨╛╤В╨║╤А╤Л╤В╨╕╤П ╨▓╨╜╤И╨╜╨╕╤Е ╨╛╨▒╤А╨░╨▒╨╛╤В╨╛╨║ (!) ╨┤╨╗╤П ╨▒╨░╨╖╤Л ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П 1╤Б ╨Ф╨╛╨╗╨╢╨╡╨╜ ╨▒╤Л╤В╤М ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╝ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╨▒╨░╨╖', name: 'admin1cUser')
+        string(defaultValue: "${env.admin1cPwd}", description: '╨Я╨░╤А╨╛╨╗╤М ╨░╨┤╨╝╨╕╨╜╨╕╤Б╤В╤А╨░╤В╨╛╤А╨░ ╨▒╨░╨╖╤Л ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П 1C. ╨Ф╨╛╨╗╨╢╨╡╨╜ ╨▒╤Л╤В╤М ╨╛╨┤╨╕╨╜╨░╨║╨╛╨▓╤Л╨╝ ╨┤╨╗╤П ╨▓╤Б╨╡╤Е ╨▒╨░╨╖', name: 'admin1cPwd')
+        string(defaultValue: "${env.templatebases}", description: '╨б╨┐╨╕╤Б╨╛╨║ ╨▒╨░╨╖ ╨┤╨╗╤П ╤В╨╡╤Б╤В╨╕╤А╨╛╨▓╨░╨╜╨╕╤П ╤З╨╡╤А╨╡╨╖ ╨╖╨░╨┐╤П╤В╤Г╤О. ╨Э╨░╨┐╤А╨╕╨╝╨╡╤А work_erp,work_upp', name: 'templatebases')
     }
-
+    
     agent {
         label "${(env.jenkinsAgent == null || env.jenkinsAgent == 'null') ? "master" : env.jenkinsAgent}"
     }
