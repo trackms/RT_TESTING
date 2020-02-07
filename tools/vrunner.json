@@ -1,13 +1,4 @@
 
-    "vanessa": {
-        "--vanessasettings": "tools/VBParams.json",
-        "--workspace": ".",
-        "--pathvanessa": ".",
-        "--additional": "/DisplayAllFunctions /L ru"
-    }
-}
-
-
 {
     "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
