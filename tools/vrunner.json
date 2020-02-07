@@ -13,7 +13,8 @@
         "--ordinaryapp": "-1"
     },
     "vanessa": {
-        "--vanessasettings": "./tools/add/tools/JSON/VBParams8310UF.json",
+        //"--vanessasettings": "./tools/add/tools/JSON/VBParams8310UF.json",
+        "--vanessasettings": "tools/VBParams.json",
         "--pathvanessa": "./tools/add/bddRunner.epf"
     },
     "xunit": {
