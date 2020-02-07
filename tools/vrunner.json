@@ -13,8 +13,8 @@
         "--ordinaryapp": "-1"
     },
     "vanessa": {
-        "--vanessasettings": "./tools/JSON/VBParams8310UF.json",
-        "--pathvanessa": "./bddRunner.epf"
+        "--vanessasettings": "./tools/add/tools/JSON/VBParams8310UF.json",
+        "--pathvanessa": "./tools/add/bddRunner.epf"
     },
     "xunit": {
         "--ibconnection": "/F./build/ibservicexdd",
