@@ -9,7 +9,7 @@
         "--v8version":"8.3.16",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
         // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
-        "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
+        //"--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
         "--ordinaryapp": "-1"
     },
     "vanessa": {
