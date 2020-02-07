@@ -25,6 +25,6 @@
         "testsPath": "./tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}",
         "--xddExitCodePath": "./build/xddExitCodePath.txt",
-        "--pathxunit": "./xddTestRunner.epf"
+        "--pathxunit": "./tools/add/xddTestRunner.epf"
     }
 }
