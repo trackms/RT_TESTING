@@ -113,6 +113,9 @@ pipeline {
                         if (admin1cPwd != null && !admin1cPwd.isEmpty()) {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
+
+                        utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf --TestClient ${admin1cUsr}:${admin1cPwd}:1538")
+
                         // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
                         returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf --TestClient ${admin1cUsr}:${admin1cPwd}:1538")
 
