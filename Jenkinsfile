@@ -117,8 +117,8 @@ pipeline {
                         returnCode = utils.cmd("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf --TestClient ${admin1cUsrLine}:${admin1cPwdLine}:1538")
 
                         if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${testbase}")
-                            //utils.raiseError("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf")
+                            //utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
+                            utils.raiseError("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf")
                         }
                     }
                 }
