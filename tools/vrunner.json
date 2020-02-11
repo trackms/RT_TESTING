@@ -6,7 +6,7 @@
         // "--db-user": "smenzhesarov",
         // "--db-pwd": "qwerty",
         "--workspace": ".",
-        "--v8version":"8.3.16",
+        //"--v8version":"8.3.16",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
         //"--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
