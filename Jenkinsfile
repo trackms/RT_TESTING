@@ -114,11 +114,11 @@ pipeline {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
                         // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
-                        returnCode = utils.cmd("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf --TestClient ${admin1cUsrLine}:${admin1cPwdLine}:1538")
+                        returnCode = utils.cmd("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf --TestClient ${admin1cUsr}:${admin1cPwd}:1538")
 
                         if (returnCode != 0) {
                             //utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
-                            utils.raiseError("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf")
+                            utils.raiseError("runner xunit --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf  --TestClient ${admin1cUsr}:${admin1cPwd}:1538")
                         }
                     }
                 }
