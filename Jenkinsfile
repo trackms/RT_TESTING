@@ -46,7 +46,6 @@ pipeline {
                 }
             }
         }
-    }    
         // stage("Тестирование ADD") {
         //     steps {
         //         timestamps {
@@ -86,7 +85,7 @@ pipeline {
         //         }
         //     }
         // }
-    stage("Дымовое тестирование") {
+        stage("Дымовое тестирование") {
             steps {
                 timestamps {
                     script {
@@ -124,7 +123,8 @@ pipeline {
                     }
                 }
             }
-    }    
+        }
+    }   
     post {
         always {
             script {
