@@ -2,9 +2,9 @@
 {
     "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
-        "--ibconnection": "/S RTITS-1C-04:1541\erp_mss",
-        "--db-user": "smenzhesarov",
-        "--db-pwd": "qwerty",
+        // "--ibconnection": "/S RTITS-1C-04:1541\erp_mss",
+        // "--db-user": "smenzhesarov",
+        // "--db-pwd": "qwerty",
         "--workspace": ".",
         "--v8version":"8.3.16",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
@@ -25,6 +25,6 @@
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}",
         "--xddExitCodePath": "./build/xddExitCodePath.txt",
         "--pathxunit": "$addroot/xddTestRunner.epf",
-        "--testclient": "smenzhesarov:qwerty:1538"
+        //"--testclient": "smenzhesarov:qwerty:1538"
     }
 }
