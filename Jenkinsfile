@@ -114,7 +114,7 @@ pipeline {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
 
-                        errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --TestClient ${admin1cUsr}:${admin1cPwd}:1538"
+                        //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --TestClient ${admin1cUsr}:${admin1cPwd}:1538"
 
                         errorText = "фысфсфысфсфыс"
                         error errorText
