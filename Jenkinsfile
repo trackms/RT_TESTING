@@ -114,10 +114,7 @@ pipeline {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
 
-                        
                         //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538"
-
-                        //errorText = "фысфсфысфсфыс"
                         //error errorText
 
                         // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
