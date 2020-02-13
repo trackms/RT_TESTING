@@ -114,19 +114,19 @@ pipeline {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
 
-                        //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --TestClient ${admin1cUsr}:${admin1cPwd}:1538"
-                        errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538"
+                        
+                        //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538"
 
                         //errorText = "фысфсфысфсфыс"
-                        error errorText
+                        //error errorText
 
                         // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
-                        //returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf")
+                        returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
 
-                        //if (returnCode != 0) {
+                        if (returnCode != 0) {
                             //utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
-                        //    utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathxunit tools/add/xddTestRunner.epf")
-                        //}
+                            utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
+                        }
                     }
                 }
             }
