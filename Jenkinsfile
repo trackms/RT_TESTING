@@ -115,7 +115,7 @@ pipeline {
                         }
 
                         //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --TestClient ${admin1cUsr}:${admin1cPwd}:1538"
-                        errorText = "TestClient ${admin1cUsr}:${admin1cPwd}:1538"
+                        errorText = "--testclient ${admin1cUser}"
 
                         //errorText = "фысфсфысфсфыс"
                         error errorText
