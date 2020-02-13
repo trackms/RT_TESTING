@@ -124,8 +124,8 @@ pipeline {
                         returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
 
                         if (returnCode != 0) {
-                            //utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
-                            utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
+                            utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
+                            //utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
                         }
                     }
                 }
