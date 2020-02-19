@@ -2,16 +2,18 @@
 {
     "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
-        //"--ibconnection": "/S RTITS-1C-04:1541\erp_mss",
-        // "--db-user": "smenzhesarov",
-        //"--db-pwd": "qwerty",
-        //"--workspace": ".",
-        //"--v8version":"8.3.16",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
-       // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
-        //"--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
         "--ordinaryapp": "-1",
         "--addroot": "./tools/add"
+
+        // ,"--ibconnection": "/S RTITS-1C-04:1541\erp_mss",
+        // "--db-user": "smenzhesarov",
+        // "--db-pwd": "qwerty",
+        // "--workspace": ".",
+        // "--v8version":"8.3.16"
+
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
+       //"--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
     },
     "vanessa": {
         "--vanessasettings": "tools/VBParams.json",
@@ -21,8 +23,8 @@
         "--xddConfig": "./tools/xUnitParams.json",
         "--testsPath": "./tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}",
-        "--xddExitCodePath": "./build/xddExitCodePath.txt"
-        //"--pathxunit": "$addroot/xddTestRunner.epf",
+        "--xddExitCodePath": "./build/xddExitCodePath.txt",
+        "--pathxunit": "$addroot/xddTestRunner.epf"
         //"--testclient": "smenzhesarov:qwerty:1538"
     }
 }
