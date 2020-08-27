@@ -85,50 +85,50 @@ pipeline {
         //         }
         //     }
         // }
-        stage("Дымовое тестирование") {
-            steps {
-                timestamps {
-                    script {
-                        templatebasesList = utils.lineToArray(templatebases.toLowerCase())
+    //     stage("Дымовое тестирование") {
+    //         steps {
+    //             timestamps {
+    //                 script {
+    //                     templatebasesList = utils.lineToArray(templatebases.toLowerCase())
 
-                        if (templatebasesList.size() == 0) {
-                            return
-                        }
+    //                     if (templatebasesList.size() == 0) {
+    //                         return
+    //                     }
                         
-                        templateDb = templatebasesList[0]
-                        testbase = "${templateDb}"
-                        testbaseConnString = utils.getConnString(server1c, testbase, agent1cPort)
+    //                     templateDb = templatebasesList[0]
+    //                     testbase = "${templateDb}"
+    //                     testbaseConnString = utils.getConnString(server1c, testbase, agent1cPort)
 
-                        platform1cLine = ""
-                        if (platform1c != null && !platform1c.isEmpty()) {
-                            platform1cLine = "--v8version ${platform1c}"
-                        }
+    //                     platform1cLine = ""
+    //                     if (platform1c != null && !platform1c.isEmpty()) {
+    //                         platform1cLine = "--v8version ${platform1c}"
+    //                     }
 
-                        admin1cUsrLine = ""
-                        if (admin1cUser != null && !admin1cUser.isEmpty()) {
-                            admin1cUsrLine = "--db-user ${admin1cUser}"
-                        }
+    //                     admin1cUsrLine = ""
+    //                     if (admin1cUser != null && !admin1cUser.isEmpty()) {
+    //                         admin1cUsrLine = "--db-user ${admin1cUser}"
+    //                     }
 
-                        admin1cPwdLine = ""
-                        if (admin1cPwd != null && !admin1cPwd.isEmpty()) {
-                            admin1cPwdLine = "--db-pwd ${admin1cPwd}"
-                        }
+    //                     admin1cPwdLine = ""
+    //                     if (admin1cPwd != null && !admin1cPwd.isEmpty()) {
+    //                         admin1cPwdLine = "--db-pwd ${admin1cPwd}"
+    //                     }
 
-                        //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538"
-                        //error errorText
+    //                     //errorText = "runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538"
+    //                     //error errorText
 
-                        // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
-                        returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
+    //                     // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
+    //                     returnCode = utils.cmd("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
 
-                        if (returnCode != 0) {
-                            utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
-                            //utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
-                        }
-                    }
-                }
-            }
-        }
-    }   
+    //                     if (returnCode != 0) {
+    //                         utils.raiseError("Возникла ошибка при запуске XUNIT на сервере ${server1c} и базе ${testbase}")
+    //                         //utils.raiseError("runner xunit tests --settings tools/vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --testclient ${admin1cUser}:${admin1cPwd}:1538")
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }   
     post {
         always {
             script {
