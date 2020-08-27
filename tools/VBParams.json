@@ -7,6 +7,11 @@
     "КаталогиБиблиотек": [
         "./features/Libraries"
     ],
+
+    "EpfДляИнициализацияБазы": "./tools/add/tools/epf/init.epf",
+    "ПараметрыДляИнициализацияБазы": "./tools/add/tools/epf/init.json",
+    "ПутьКVanessaADD": "./tools/add/bddRunner.epf",
+    "КаталогПроекта": "$workspaceRoot",
     "СписокТеговИсключение":[
         "IgnoreOnCIMainBuild",
         "Draft"
